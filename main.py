@@ -23,17 +23,16 @@ def menu():
     elif choix == 2:
         # On stock le numero de telephone le résultat de la lecture du nom recherché
         nom = input("Entrez le nom demandé: ")
-        with open('repertoire.txt', 'r') as f:
-            # Regarde chaque ligne afin de trouver le bon numéro
-            telephone = lecture(nom)
-            # Si le resultat est trouvable alors il affiche le numéro
-            if telephone is not None:
-                print(f'Le numéro de la recherche est : {telephone}')
-                menu()
-                # Sinon il affiche "Inconnu"
-            else:
-                print('Inconnu')
-                menu()
+        # Regarde chaque ligne afin de trouver le bon numéro
+        telephone = lecture(nom)
+        # Si le resultat est trouvable alors il affiche le numéro
+        if telephone is not None:
+            print(f'Le numéro de la recherche est : {telephone}')
+            menu()
+            # Sinon il affiche "Inconnu"
+        else:
+            print('Inconnu')
+            menu()
 
 #Permet au programme de demander le numéro et de le return dans le programme
 def demandernum():
